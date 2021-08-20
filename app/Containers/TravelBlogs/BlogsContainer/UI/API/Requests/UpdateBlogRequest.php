@@ -35,6 +35,7 @@ class UpdateBlogRequest extends Request
     public function rules(): array
     {
         return [
+            'id'=>'required',
             'name'=>'required',
             'price'=>'required',
             'country'=>'required',

@@ -27,14 +27,7 @@ class DeleteBlogTask extends Task
                    $deleted= $blog->each->delete();
                    return $deleted;
                }
-            // $token = JWTAuth::getToken();
-            // $details = JWTAuth::getPayload($token)->toArray();
-            // $Admin_id = $details["sub"];
-            // $data=BlogsModel::where('admin_id',$id)->value('admin_id');
-            // if( $data){
-            //     $deleted= $blog->each->delete();
-            //     return $deleted;
-            // }
+          
                    
     }
 }

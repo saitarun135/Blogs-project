@@ -11,7 +11,7 @@ class UpdateBlogAction extends Action
     public function run(UpdateBlogRequest $request)
     {
         $updateBlog=app(UpdateBlogTask::class)->run(
-            $request->input('id'),
+            $request->id,
             $request->name,
             $request->price,
             $request->country,

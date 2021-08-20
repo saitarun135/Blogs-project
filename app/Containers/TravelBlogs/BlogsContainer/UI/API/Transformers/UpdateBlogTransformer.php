@@ -21,23 +21,15 @@ class UpdateBlogTransformer extends Transformer
 
     ];
 
-    public function transform(): array
+    public function transform(string $data): array
     {
         $response = [
-            'message'=>'success',
-            // 'object' => $blogsmodel->getResourceKey(),
-            // 'id' => $blogsmodel->getHashedKey(),
-            // 'created_at' => $blogsmodel->created_at,
-            // 'updated_at' => $blogsmodel->updated_at,
-            // 'readable_created_at' => $blogsmodel->created_at->diffForHumans(),
-            // 'readable_updated_at' => $blogsmodel->updated_at->diffForHumans(),
+            'message'=>$data,
+           
 
         ];
 
-        // $response = $this->ifAdmin([
-        //     'real_id'    => $blogsmodel->id,
-        //     // 'deleted_at' => $blogsmodel->deleted_at,
-        // ], $response);
+   
 
         return $response;
     }
