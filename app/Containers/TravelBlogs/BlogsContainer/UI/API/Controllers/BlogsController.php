@@ -24,11 +24,13 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\DB;
 class BlogsController extends ApiController
 {
+    
     public function upload(PostBlogRequest $request){
         $post=app(PostBlogAction::class)->run($request);
         return $this->transform($post,PostBlogTransformer::class);
     }
    
+
     public function updateBlog(UpdateBlogRequest $request){
         $update=app(UpdateBlogAction::class)->run($request);
         return $this->transform($update,UpdateBlogTransformer::class);
@@ -38,17 +40,17 @@ class BlogsController extends ApiController
         $delete=app(DeleteBlogAction::class)->run($request);
         return $this->transform($delete,DeleteBlogTransformer::class);
     }
+
     public function displayAdminBlogs(DisplayAdminBlogsRequest $request):array
     {
         $myBlogs=app(DisplayAdminBlogsAction::class)->run($request);
         return $this->transform($myBlogs,DisplayAdminBlogsTransformer::class);
-
     }
   
-   public function displayAllBlogs(UserGetAllBlogsRequest $request): array{
-    $blogs=app(UserGETAllBlogsAction::class)->run($request);
-    return $this->transform($blogs,UserGetAllBlogsTransformer::class);
-   }
+    public function displayAllBlogs(UserGetAllBlogsRequest $request): array{
+        $blogs=app(UserGETAllBlogsAction::class)->run($request);
+        return $this->transform($blogs,UserGetAllBlogsTransformer::class);
+    }
    
     // public function displayBlogByID(Request $request,$id){
     //     $blogs=BlogsModel::findOrFail($id);

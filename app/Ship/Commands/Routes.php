@@ -11,6 +11,18 @@
 |
 */
 
-//Artisan::command('inspire', function () {
-//    $this->comment(Inspiring::quote());
-//})->describe('Display an inspiring quote');
+use Illuminate\Foundation\Inspiring;
+use App\Console\Commands\Hello;
+use App\Jobs\greetingsJob;
+
+Artisan::command('inspire', function () {
+   $this->comment(Inspiring::quote());
+})->describe('Display an inspiring quote');
+
+Artisan::command('make:greetings', function () {
+    return Log::info('Hello world,welcome to payarc');
+ });
+ 
+Artisan::command('my:job',function(){
+dispatch(new greetingsJob());
+});

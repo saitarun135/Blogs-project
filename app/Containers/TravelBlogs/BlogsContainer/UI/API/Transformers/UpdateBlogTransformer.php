@@ -25,12 +25,7 @@ class UpdateBlogTransformer extends Transformer
     {
         $response = [
             'message'=>$data,
-           
-
         ];
-
-   
-
         return $response;
     }
 }
